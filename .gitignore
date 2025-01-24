@@ -1,0 +1,6 @@
+.venv
+.env
+__pycache__
+credentials/ai-apps-445910-5a5be0307afd.json
+.vscode
+docs/*

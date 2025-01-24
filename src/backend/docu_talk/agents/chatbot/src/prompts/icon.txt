@@ -1,0 +1,7 @@
+<icons>{icons}/<icons>
+
+<chatbot_description>{chatbot_description}</chatbot_description>
+
+Based on the description of the Chatbot above, determine which icon from the list of available icons is best suited to illustrate it. Return a JSON with these keys:
+- "name": The name of the icon from the list of available icons
+- "color": The chosen color for the icon (It should not be a light colour)

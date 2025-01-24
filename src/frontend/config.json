@@ -1,0 +1,20 @@
+{
+    "display_guest_mode": false,
+    "token_expiration_hours": 168,
+    "models": {
+        "basic": "gemini-1.5-flash-002",
+        "premium": "gemini-1.5-pro-002"
+    },
+    "credits": {
+        "period_dollar_amount": {
+            "user": 0.25,
+            "guest": 0.05
+        },
+        "credit_exchange_rate": 1000
+    },
+    "limits": {
+        "max_icon_file_size": 500,
+        "max_nb_doc_per_chatbot": 20,
+        "max_nb_pages_per_chatbot": 200
+    }
+}

@@ -1,0 +1,5 @@
+Generate a JSON list of sources referenced in your the last message. If multiple references come from the same paragraph, section, or closely related part of the document, combine them into a single source. Each source should be represented as a dictionnary with the following keys:
+- "citation": The exact citation text or reference.
+- "filename": The name of the document where the citation is found.
+- "page": The page number where the citation is located.
+Ensure that sources from unrelated parts of the document remain as separate entries.

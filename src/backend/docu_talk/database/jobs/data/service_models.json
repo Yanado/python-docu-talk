@@ -1,0 +1,22 @@
+[
+    {
+        "name": "gemini-1.5-flash-002",
+        "unit": "characters",
+        "price_per_unit": 0.00000003
+    },
+    {
+        "name": "gemini-1.5-pro-002",
+        "unit": "characters",
+        "price_per_unit": 0.0000006
+    },
+    {
+        "name": "gemini-2.0-flash-exp",
+        "unit": "characters",
+        "price_per_unit": 0.00000003
+    },
+    {
+        "name": "gemini-2.0-pro-exp",
+        "unit": "characters",
+        "price_per_unit": 0.0000006
+    }
+]

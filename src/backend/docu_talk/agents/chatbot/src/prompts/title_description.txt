@@ -1,0 +1,5 @@
+A user wants to create a personalized Chat Bot based on the above documents. Find a friendly title and description for the chatbot.
+
+Return the information as a JSON with the following two keys:
+- "title": Title of the Chat Bot
+- "description": Description of the Chat Bot in less than 100 characters
