@@ -2,10 +2,10 @@ import random
 from datetime import datetime
 
 import streamlit as st
-from config import BASIC_MODEL_NAME, PREMIUM_MODEL_NAME, TEXTS
-from docu_talk.base import ChatBot
-from docu_talk.exceptions import BadOutputFormatError
-from st_docu_talk import StreamlitDocuTalk
+from src.frontend.config import BASIC_MODEL_NAME, PREMIUM_MODEL_NAME, TEXTS
+from src.backend.docu_talk.base import ChatBot
+from src.backend.docu_talk.exceptions import BadOutputFormatError
+from src.frontend.st_docu_talk import StreamlitDocuTalk
 
 app : StreamlitDocuTalk = st.session_state["app"]
 

@@ -1,5 +1,5 @@
 import streamlit as st
-from st_docu_talk import StreamlitDocuTalk
+from src.frontend.st_docu_talk import StreamlitDocuTalk
 
 app : StreamlitDocuTalk = st.session_state["app"]
 

@@ -1,12 +1,19 @@
 import sys
+import os
 
 import streamlit as st
 
-for path in ["src/frontend", "src/backend"]:
-    if path not in sys.path:
-        sys.path.append(path)
+# Get absolute path to project root
+root_dir = os.path.dirname(os.path.abspath(__file__))
 
-from st_docu_talk import StreamlitDocuTalk  # noqa: E402
+# Add all relevant paths
+sys.path.insert(0, root_dir)  # Make root directory first in path
+for path in ["src/frontend", "src/backend"]:
+    abs_path = os.path.join(root_dir, path)
+    if abs_path not in sys.path:
+        sys.path.append(abs_path)
+
+from src.frontend.st_docu_talk import StreamlitDocuTalk  # noqa: E402
 
 if "app" not in st.session_state:
     st.session_state["app"] = StreamlitDocuTalk()

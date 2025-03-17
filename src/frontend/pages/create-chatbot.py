@@ -2,16 +2,16 @@ from datetime import datetime
 from uuid import uuid4
 
 import streamlit as st
-from config import (
+from src.frontend.config import (
     LOGO_PATH,
     MAX_NB_DOC_PER_CHATBOT,
     MAX_NB_PAGES_PER_CHATBOT,
     PREMIUM_MODEL_NAME,
     TEXTS,
 )
-from docu_talk.exceptions import BadOutputFormatError
-from st_docu_talk import StreamlitDocuTalk
-from utils.file_io import get_nb_pages_pdf
+from src.backend.docu_talk.exceptions import BadOutputFormatError
+from src.frontend.st_docu_talk import StreamlitDocuTalk
+from src.backend.utils.file_io import get_nb_pages_pdf
 
 app : StreamlitDocuTalk = st.session_state["app"]
 

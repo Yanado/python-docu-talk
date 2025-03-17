@@ -1,6 +1,6 @@
 import streamlit as st
-from config import TEXTS
-from st_docu_talk import StreamlitDocuTalk
+from src.frontend.config import TEXTS
+from src.frontend.st_docu_talk import StreamlitDocuTalk
 
 app : StreamlitDocuTalk = st.session_state["app"]
 

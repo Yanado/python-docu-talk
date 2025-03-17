@@ -1,17 +1,28 @@
 from string import Template
 
 import streamlit as st
-from assets import templates
-from config import DISPLAY_GUEST_MODE, ENCODED_LOGO, TEXTS
-from st_docu_talk import StreamlitDocuTalk
+from src.frontend.assets import templates
+from src.frontend.config import DISPLAY_GUEST_MODE, ENCODED_LOGO, TEXTS
+from src.frontend.st_docu_talk import StreamlitDocuTalk
 
 app : StreamlitDocuTalk = st.session_state["app"]
 
 if "login_provider" in st.query_params:
-    st.login(provider=st.query_params["login_provider"])
+    # st.login(provider=st.query_params["login_provider"])
+    # Fall back to guest mode while OAuth is being configured
+    st.info("Third-party login is being configured. Using guest mode for now.")
+    app.auth.sign_guest()
+    st.rerun()
+    # st.login(provider=st.query_params["login_provider"])
     st.stop()
-elif st.experimental_user.is_logged_in is True:
+elif hasattr(st, 'experimental_user') and hasattr(st.experimental_user, 'email') and st.experimental_user.email:
+    # User is logged in via Streamlit's built-in auth
     app.auth.sign_in_from_provider()
+    st.stop()
+elif st.session_state.get("app") and st.session_state["app"].auth and st.session_state["app"].auth.logged_in:
+    # User is already logged in via custom auth system
+    st.success("You are already logged in!")
+    st.rerun()
 
 app.set_page_config(
     layout="wide",

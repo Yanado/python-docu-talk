@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 from pymongo import MongoClient
 
 sys.path.append("src/backend")
-from docu_talk.database.base import ServiceModels
+from src.backend.docu_talk.database.base import ServiceModels
 
 if __name__ == "__main__":
 

@@ -2,13 +2,31 @@ import json
 import os
 
 import toml
-from utils.file_io import get_encoded_image, recursive_read
+from src.backend.utils.file_io import get_encoded_image, recursive_read
 
 with open(".streamlit/secrets.toml", "r") as file:
     data = toml.load(file)
 
+# Create credentials directory if it doesn't exist
+os.makedirs("credentials", exist_ok=True)
+
+# Fix the missing file handle
 with open("credentials/gcp_credentials.json", "w") as f:
-    json.dump(data["gcp_credentials"], f)
+    if "gcp_credentials" in data:
+        # Parse the string as JSON first, then write the resulting object
+        if isinstance(data["gcp_credentials"], str):
+            try:
+                # If it's a JSON string, parse it first
+                credential_json = json.loads(data["gcp_credentials"])
+                json.dump(credential_json, f, indent=2)
+            except json.JSONDecodeError:
+                # If parsing fails, write it directly
+                f.write(data["gcp_credentials"])
+        else:
+            # It's already an object
+            json.dump(data["gcp_credentials"], f, indent=2)
+    else:
+        json.dump({}, f)  # Empty JSON object as placeholder
 
 for k, v in data["dotenv"].items():
     os.environ[k] = v

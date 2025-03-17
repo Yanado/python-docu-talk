@@ -1,6 +1,6 @@
 import streamlit as st
-from auth.auth import Auth
-from config import (
+from src.frontend.auth.auth import Auth
+from src.frontend.config import (
     CREDIT_EXCHANGE_RATE,
     ENCODED_LOGO,
     LOGO_PATH,
@@ -8,10 +8,10 @@ from config import (
     MAX_NB_PAGES_PER_CHATBOT,
     TEXTS,
 )
-from docu_talk.docu_talk import DocuTalk
-from mailing.mailing_bot import MailingBot
-from sidebar import Sidebar
-from st_utils.decorators import st_confirmation_dialog, st_progress
+from src.backend.docu_talk.docu_talk import DocuTalk
+from src.backend.mailing.mailing_bot import MailingBot
+from src.frontend.sidebar import Sidebar
+from src.frontend.st_utils.decorators import st_confirmation_dialog, st_progress
 
 
 class StreamlitDocuTalk:

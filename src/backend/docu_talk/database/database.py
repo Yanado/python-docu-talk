@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Union
 
-from docu_talk.database.base import (
+from src.backend.docu_talk.database.base import (
     Access,
     AskChatbotDuration,
     AskChatbotTokenCount,

@@ -3,12 +3,12 @@ import logging
 import os
 from typing import Generator, Tuple
 
-from docu_talk.agents.chatbot.generator import Gemini
-from docu_talk.agents.chatbot.icons import get_icon_bytes
-from docu_talk.agents.storage import GoogleCloudStorageManager
-from docu_talk.exceptions import BadOutputFormatError
-from utils.file_io import recursive_read
-from utils.parsing import extract_dict, extract_list, extract_list_of_dicts
+from src.backend.docu_talk.agents.chatbot.generator import Gemini
+from src.backend.docu_talk.agents.chatbot.icons import get_icon_bytes
+from src.backend.docu_talk.agents.storage import GoogleCloudStorageManager
+from src.backend.docu_talk.exceptions import BadOutputFormatError
+from src.backend.utils.file_io import recursive_read
+from src.backend.utils.parsing import extract_dict, extract_list, extract_list_of_dicts
 
 from .validation import Desc, Icon, Source, SuggestedPrompts
 

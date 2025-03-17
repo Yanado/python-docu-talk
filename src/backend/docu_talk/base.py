@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from docu_talk.agents import ChatBotService
+from src.backend.docu_talk.agents import ChatBotService
 
 
 @dataclass

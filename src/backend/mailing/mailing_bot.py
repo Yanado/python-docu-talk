@@ -2,8 +2,8 @@ import os
 from string import Template
 
 from html2text import html2text
-from mailing.aws_ses import AWSMailSES
-from utils.file_io import recursive_read
+from src.backend.mailing.aws_ses import AWSMailSES
+from src.backend.utils.file_io import recursive_read
 
 
 class MailingBot:

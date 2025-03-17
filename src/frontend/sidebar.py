@@ -2,10 +2,10 @@ import random
 from string import Template
 
 import streamlit as st
-from assets import templates
-from auth.auth import Auth
-from config import BASE_URL, CREDIT_EXCHANGE_RATE, ENCODED_LOGO, TEXTS
-from docu_talk.docu_talk import DocuTalk
+from src.frontend.assets import templates
+from src.frontend.auth.auth import Auth
+from src.frontend.config import BASE_URL, CREDIT_EXCHANGE_RATE, ENCODED_LOGO, TEXTS
+from src.backend.docu_talk.docu_talk import DocuTalk
 
 
 class Sidebar:

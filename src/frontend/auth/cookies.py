@@ -3,7 +3,7 @@ from datetime import datetime, timedelta, timezone
 
 import jwt
 from streamlit_cookies_controller import CookieController
-from utils.misc import get_param_or_env
+from src.backend.utils.misc import get_param_or_env
 
 
 class TokenManager:
